@@ -45,7 +45,7 @@ n1$print('chart1')
 ```
 
 ---
-## Shiny App
+## Shiny App (need server to work)
 
 ```{r opts.label = 'shiny'}
 slidifyUI(
@@ -60,6 +60,11 @@ slidifyUI(
   )
 )
 ```
+
+---
+## Shiny App (open app from shinyapps.io website)
+
+<iframe src="http://thiakx.shinyapps.io/stockVis"></iframe>
 
 ---
 ## A ggPlot

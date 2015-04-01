@@ -200,7 +200,7 @@ This is an explanation
 </script>
 
 ---
-## Shiny App
+## Shiny App (need server to work)
 
 <div class="row-fluid">
   <div class="span4">
@@ -219,6 +219,11 @@ This is an explanation
     <div id="nvd3plot" class="shiny-html-output nvd3 rChart"></div>
   </div>
 </div>
+
+---
+## Shiny App (open app from shinyapps.io website)
+
+<iframe src="http://thiakx.shinyapps.io/stockVis"></iframe>
 
 ---
 ## A ggPlot
