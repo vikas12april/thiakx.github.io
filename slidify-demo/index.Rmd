@@ -1,0 +1,78 @@
+---
+title       : Basic Slide Deck
+subtitle    : Some subtitle
+author      : kx
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax, bootstrap, quiz, shiny, interactive]
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+ext_widgets : {rCharts: [libraries/nvd3]}
+---
+## Intro List
+
+1. Hello
+2. Here is a list
+
+--- &radio
+## Pop Quiz Time
+
+What is this? $$\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+1. apple
+2. _some maths formula_
+3. dog
+4. cucumber
+
+*** .hint
+This is a hint
+
+*** .explanation
+This is an explanation
+
+---
+## Interactive Chart
+
+```{r echo = F, results = 'asis'}
+require(rCharts)
+haireye = as.data.frame(HairEyeColor)
+n1 <- nPlot(Freq ~ Hair, group = 'Eye', type = 'multiBarChart',
+  data = subset(haireye, Sex == 'Male')
+)
+n1$print('chart1')
+```
+
+---
+## Shiny App
+
+```{r opts.label = 'shiny'}
+slidifyUI(
+  sidebarPanel(
+    selectInput('sex', 'Choose Sex', c('Male', 'Female')),
+    selectInput('type', 'Choose Type',
+      c('multiBarChart', 'multiBarHorizontalChart')
+    )
+  ),
+  mainPanel(
+    tags$div(id = 'nvd3plot', class='shiny-html-output nvd3 rChart')
+  )
+)
+```
+
+---
+## A ggPlot
+```{r simple-plot, fig.height = 6, fig.align = 'center', message = F}
+require(ggplot2)
+qplot(wt, mpg, data = mtcars)
+```
+
+---
+## MotionPlot
+
+```{r results = 'asis', commment = NA, message = F, echo = F}
+require(googleVis)
+M1 <- gvisMotionChart(Fruits, idvar="Fruit", timevar="Year")
+print(M1, tag = 'chart')
+```
