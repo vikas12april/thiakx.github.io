@@ -221,7 +221,7 @@ This is an explanation
 </div>
 
 ---
-## Shiny App (open app from shinyapps.io website)
+## Shiny App (open app from shinyapps.io website, won't show in runDeck() )
 
 <iframe src="http://thiakx.shinyapps.io/stockVis"></iframe>
 
