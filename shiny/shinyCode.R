@@ -6,7 +6,7 @@
 library(shiny)
 
 #examples
-#runExample("01_hello") # a histogram
+runExample("01_hello") # a histogram
 # runExample("02_text") # tables and data frames
 # runExample("03_reactivity") # a reactive expression
 # runExample("04_mpg") # global variables
@@ -20,14 +20,17 @@ library(shiny)
 
 #simple app
 runApp("simple")
+runApp("simple", display.mode = "showcase")
 
 #app with widgets
 runApp("census")
 
 #stock market app
 runApp("stockVis")
+runApp("stockVis", display.mode = "showcase")
 
 #deploy apps to shinyapps.io
+#create an account on https://www.shinyapps.io/ first
 library(shinyapps)
 shinyapps::deployApp('simple')
 shinyapps::deployApp('census')
